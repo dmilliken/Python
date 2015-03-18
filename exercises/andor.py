@@ -1,8 +1,8 @@
-input = raw_input("Give me a number: ")
-input = int(input)
+user_input = input("Give me a number: ")
+num = int(user_input)
 
-if input < 10 or input > 20:
-    print 'That\'s a good number'
+if num < 10 or num > 20:
+    print("That\'s a good number")
 
-if input > 10 and input < 20:
-    print "You've found the sweet spot"
+if num > 10 and num < 20:
+    print("You've found the sweet spot")
