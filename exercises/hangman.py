@@ -3,103 +3,103 @@ import random
 
 HANGMAN = [
 
-""""
-------
-|    |
-|
-|
-|
-|
-|
-|
-|
-------
-""",
-""""
-------
-|    |
-|    0
-|
-|
-|
-|
-|
-|
-------
-""",
-""""
-------
-|    |
-|    0
-|   -+-
-|
-|
-|
-|
-|
-------
-""",
-""""
-------
-|    |
-|    0
-|  /-+-
-|
-|
-|
-|
-|
-------
-""",
+    """"
+    ------
+    |    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    ------
+    """,
+    """"
+    ------
+    |    |
+    |    0
+    |
+    |
+    |
+    |
+    |
+    |
+    ------
+    """,
+    """"
+    ------
+    |    |
+    |    0
+    |   -+-
+    |
+    |
+    |
+    |
+    |
+    ------
+    """,
+    """"
+    ------
+    |    |
+    |    0
+    |  /-+-
+    |
+    |
+    |
+    |
+    |
+    ------
+    """,
 
-""""
-------
-|    |
-|    0
-|  /-+-/
-|    |
-|    
-|   
-|
-|
-------
-""",
-""""
-------
-|    |
-|    0
-|  /-+-/
-|    |
-|    | 
-|   
-|
-|
-------
-""",
-""""
-------
-|    |
-|    0
-|  /-+-/
-|    |
-|    | 
-|   /
-|
-|
-------
-""",
-""""
-------
-|    |
-|    0
-|  /-+-/
-|    |
-|    | 
-|   / \\
-|
-|
-------
-"""
+    """"
+    ------
+    |    |
+    |    0
+    |  /-+-/
+    |    |
+    |
+    |
+    |
+    |
+    ------
+    """,
+    """"
+    ------
+    |    |
+    |    0
+    |  /-+-/
+    |    |
+    |    |
+    |
+    |
+    |
+    ------
+    """,
+    """"
+    ------
+    |    |
+    |    0
+    |  /-+-/
+    |    |
+    |    |
+    |   /
+    |
+    |
+    ------
+    """,
+    """"
+    ------
+    |    |
+    |    0
+    |  /-+-/
+    |    |
+    |    |
+    |   / \\
+    |
+    |
+    ------
+    """
 ]
 
 
@@ -121,47 +121,47 @@ wrong = 0
 used = []
 
 
-print "Welcome to Hangman. Good luck!"
+print("Welcome to Hangman. Good luck!")
 
 
 while wrong < MAX_WRONG and so_far != word:
-    print HANGMAN[wrong]
+    print(HANGMAN[wrong])
 
-    guess = raw_input("Enter your guess: ")
+    guess = input("Enter your guess: ")
     guess = guess.lower()
 
     used.append(guess)
 
     if guess in word:
-		print "Yes! %s is in the word" % guess
+        print("Yes! %s is in the word" % guess)
 
-		new = ""
+        new = ""
 
-		for i in range(0, len(word)):
-			if guess == word[i]:
-				new = new + guess
-			else:
-				new = new + so_far[i]
-		
-		so_far = new
+        for i in range(0, len(word)):
+            if guess == word[i]:
+                new = new + guess
+            else:
+                new = new + so_far[i]
+
+        so_far = new
 
     else:
-        print "Sorry %s is NOT in the word." % guess
+        print("Sorry %s is NOT in the word." % guess)
         wrong += 1
 
-    print "\nSo far, the word is: %s " % so_far
-    print "\nYou've used the following letters:\n", used
+    print("\nSo far, the word is: %s " % so_far)
+    print("\nYou've used the following letters:\n", used)
 
 
 if wrong == MAX_WRONG:
-	print HANGMAN[wrong]
-	print "You've been hanged!"
+    print(HANGMAN[wrong])
+    print("You've been hanged!")
 
 else:
-	print "You guessed it!"
+    print("You guessed it!")
 
 
-print "The word was %s" % word
+print("The word was %s" % word)
 
 
 
